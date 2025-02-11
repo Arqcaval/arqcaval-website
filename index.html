@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Arqcaval LLC - Diseño Residencial</title>
+    <link rel="stylesheet" href="styles.css">
+    <script defer src="script.js"></script>
+</head>
+<body>
+    <header>
+        <h1 id="title">Arqcaval LLC - Diseño Residencial</h1>
+        <nav>
+            <ul>
+                <li><a href="#home" class="lang" data-key="home">Inicio</a></li>
+                <li><a href="#services" class="lang" data-key="services">Servicios</a></li>
+                <li><a href="#projects" class="lang" data-key="projects">Proyectos</a></li>
+                <li><a href="#contact" class="lang" data-key="contact">Contacto</a></li>
+            </ul>
+        </nav>
+        <select id="language-selector">
+            <option value="es">Español</option>
+            <option value="en">English</option>
+        </select>
+    </header>
+
+    <section id="home">
+        <h2 class="lang" data-key="welcome">Bienvenido a Arqcaval LLC</h2>
+        <p class="lang" data-key="description">Especialistas en diseño residencial innovador y sostenible.</p>
+    </section>
+
+    <section id="services">
+        <h2 class="lang" data-key="services">Servicios</h2>
+        <ul>
+            <li class="lang" data-key="custom-design">Diseño personalizado</li>
+            <li class="lang" data-key="energy-efficient">Eficiencia energética</li>
+            <li class="lang" data-key="construction-advice">Asesoría en construcción</li>
+        </ul>
+    </section>
+
+    <section id="projects">
+        <h2 class="lang" data-key="projects">Proyectos</h2>
+        <p class="lang" data-key="projects-description">Algunos de nuestros proyectos recientes.</p>
+    </section>
+
+    <section id="contact">
+        <h2 class="lang" data-key="contact">Contacto</h2>
+        <p class="lang" data-key="contact-info">Escríbenos para más información.</p>
+    </section>
+
+    <footer>
+        <p>&copy; 2025 Arqcaval LLC</p>
+    </footer>
+
+    <script>
+        const translations = {
+            es: {
+                home: "Inicio",
+                services: "Servicios",
+                projects: "Proyectos",
+                contact: "Contacto",
+                welcome: "Bienvenido a Arqcaval LLC",
+                description: "Especialistas en diseño residencial innovador y sostenible.",
+                custom-design: "Diseño personalizado",
+                energy-efficient: "Eficiencia energética",
+                construction-advice: "Asesoría en construcción",
+                projects-description: "Algunos de nuestros proyectos recientes.",
+                contact-info: "Escríbenos para más información."
+            },
+            en: {
+                home: "Home",
+                services: "Services",
+                projects: "Projects",
+                contact: "Contact",
+                welcome: "Welcome to Arqcaval LLC",
+                description: "Specialists in innovative and sustainable residential design.",
+                custom-design: "Custom Design",
+                energy-efficient: "Energy Efficiency",
+                construction-advice: "Construction Advisory",
+                projects-description: "Some of our recent projects.",
+                contact-info: "Write to us for more information."
+            }
+        };
+
+        document.getElementById('language-selector').addEventListener('change', function () {
+            const selectedLang = this.value;
+            document.querySelectorAll('.lang').forEach(el => {
+                const key = el.getAttribute('data-key');
+                el.textContent = translations[selectedLang][key];
+            });
+        });
+    </script>
+</body>
+</html>
